@@ -198,7 +198,7 @@ namespace dash
 
     int Executor::executePipe(const PipeNode *pipe_node)
     {
-        std::cout << "执行管道命令, 后台标志: " << (pipe_node->isBackground() ? "是" : "否") << std::endl;
+        DebugLog::logExecutor("执行管道命令, 后台标志: " + std::string(pipe_node->isBackground() ? "是" : "否"));
         
         // 如果是后台运行，创建作业
         if (pipe_node->isBackground())
